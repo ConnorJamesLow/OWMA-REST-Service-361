@@ -3,6 +3,7 @@
  * CST-
  * Sep 28, 2018
  * This is my own work.
+ * References: https://stackoverflow.com/questions/1359689/how-to-send-http-request-in-java (for HttpURLConnection code)
  */
 package api.controller;
 
@@ -42,7 +43,7 @@ public class WeatherController {
 			// execute request
 			BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
 
-			// get response
+			// get response as String
 			StringBuilder response = new StringBuilder();
 			String line;
 			while ((line = reader.readLine()) != null) {
