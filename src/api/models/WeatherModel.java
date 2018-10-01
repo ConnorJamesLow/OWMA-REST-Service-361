@@ -13,42 +13,63 @@ package api.models;
 public class WeatherModel extends ControllerResponse {
 	private int id;
 	private String city;
-	private float weather;
+	private float temperature;
+	private String conditions;
+
+	/**
+	 * @return the conditions
+	 */
+	public String getConditions() {
+		return conditions;
+	}
+
+	/**
+	 * @param conditions the conditions to set
+	 */
+	public void setConditions(String conditions) {
+		this.conditions = conditions;
+	}
+
 	/**
 	 * @return the id
 	 */
 	public int getId() {
 		return id;
 	}
+
 	/**
 	 * @param id the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	/**
 	 * @return the city
 	 */
 	public String getCity() {
 		return city;
 	}
+
 	/**
 	 * @param city the city to set
 	 */
 	public void setCity(String city) {
 		this.city = city;
 	}
+
 	/**
-	 * @return the weather
+	 * @return the temperature
 	 */
-	public float getWeather() {
-		return weather;
+	public float getTemperature() {
+		return temperature;
 	}
+
 	/**
-	 * @param weather the weather to set
+	 * @param temperature the temperature to set
 	 */
-	public void setWeather(float weather) {
-		this.weather = weather;
+	public void setTemperature(float temperature) {
+		this.temperature = temperature;
 	}
-	
+
 }

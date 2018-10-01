@@ -14,7 +14,7 @@ import api.controller.WeatherController;
  * @author speed
  *
  */
-public class Driver {
+public class Program {
 	public static void main(String[] args) throws InterruptedException {
 		
 		// create controller
@@ -34,7 +34,7 @@ public class Driver {
 			System.out.println(controller.getStringTest(response));
 			
 			// pause for 2 seconds between calls
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 			max--;
 		}
 		in.close();
