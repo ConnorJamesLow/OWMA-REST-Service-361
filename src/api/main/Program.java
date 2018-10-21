@@ -6,9 +6,11 @@
  */
 package api.main;
 
-import java.util.Scanner;
+import com.google.gson.Gson;
 
-import api.controller.WeatherController;
+import api.controller.BrendansRoomTemperatureController;
+import api.models.PiData;
+import api.service.DataService;
 
 /**
  * @author speed
@@ -17,27 +19,12 @@ import api.controller.WeatherController;
 public class Program {
 	public static void main(String[] args) throws InterruptedException {
 		
-		// create controller
-		WeatherController controller = new WeatherController();
-		System.out.println("\tGetting live weather from " + controller.getUrlForCity("London") + ":\n");
+		PiData model = DataService.getData();
+		String jObject = new Gson().toJson(model);
+		System.out.println("From DB: " + jObject);
 		
-		// loop control request call
-		int max = 60;
-		Scanner in = new Scanner(System.in);
-		while(max > 0) {
-			
-			// ask user for input
-			System.out.println("Input a city:");
-			
-			// execute request
-			String response = in.nextLine();
-			System.out.println(controller.getStringTest(response));
-			
-			// pause for 2 seconds between calls
-			Thread.sleep(2000);
-			max--;
-		}
-		in.close();
-		System.out.println("Program shut down");
+		// now to send it
+		int result = BrendansRoomTemperatureController.send(model);
+		System.out.println("Result: " + result);
 	}
 }
