@@ -14,19 +14,19 @@ import java.sql.Date;
  */
 public class PiData {
 	int id;
-	int temp;
+	int temperature;
 	Date date;
 
 	public PiData() {
 		super();
 		this.id = -1;
-		this.temp = -1;
+		this.temperature = -1;
 		this.date = new Date(0L);
 	}
 
 	public PiData(int id, int temp, Date date) {
 		this.id = id;
-		this.temp = temp;
+		this.temperature = temp;
 		this.date = date;
 	}
 
@@ -38,12 +38,12 @@ public class PiData {
 		this.id = id;
 	}
 
-	public int getTemp() {
-		return temp;
+	public int getTemperature() {
+		return temperature;
 	}
 
-	public void setTemp(int temp) {
-		this.temp = temp;
+	public void setTemperature(int temp) {
+		this.temperature = temp;
 	}
 
 	/**
@@ -67,7 +67,7 @@ public class PiData {
 	 */
 	@Override
 	public String toString() {
-		return "PiData [id=" + id + ", temp=" + temp + ", date=" + date + "]";
+		return "PiData [id=" + id + ", temp=" + temperature + ", date=" + date + "]";
 	}
 
 }

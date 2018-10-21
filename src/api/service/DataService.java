@@ -39,7 +39,7 @@ public class DataService {
 			// Bind Data to result
 			if (dbResult.next()) {
 				result.setId(dbResult.getInt("id"));
-				result.setTemp(dbResult.getInt("temperature"));
+				result.setTemperature(dbResult.getInt("temperature"));
 				result.setDate(dbResult.getDate("date"));
 			}
 		} catch (SQLException e) {

@@ -19,6 +19,13 @@ import api.service.DataService;
 public class Program {
 	public static void main(String[] args) throws InterruptedException {
 		
+		while(true) {
+			magic();
+			Thread.sleep(10 * 60 * 1000);
+		}
+	}
+	
+	private static void magic() {
 		PiData model = DataService.getData();
 		String jObject = new Gson().toJson(model);
 		System.out.println("From DB: " + jObject);
