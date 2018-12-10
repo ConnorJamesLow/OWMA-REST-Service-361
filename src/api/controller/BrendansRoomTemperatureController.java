@@ -43,6 +43,7 @@ public class BrendansRoomTemperatureController {
 
 			// create a request body
 			RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), json);
+			System.out.println(json);
 
 			// create request
 			Request request = new Request.Builder().url(TARGET_URL).post(body).build();

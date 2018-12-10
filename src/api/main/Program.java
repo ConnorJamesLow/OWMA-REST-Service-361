@@ -26,11 +26,15 @@ public class Program {
 	}
 	
 	private static void magic() {
+		
+		// get most recent data
 		PiData model = DataService.getData();
+		
+		// print out the result as json
 		String jObject = new Gson().toJson(model);
 		System.out.println("From DB: " + jObject);
 		
-		// now to send it
+		// send the model to the reporting application
 		int result = BrendansRoomTemperatureController.send(model);
 		System.out.println("Result: " + result);
 	}

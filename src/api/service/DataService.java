@@ -1,6 +1,6 @@
 /**
  * Connor Low
- * CST-
+ * CST-361
  * Oct 18, 2018
  * This is my own work.
  */
@@ -22,6 +22,11 @@ import api.models.PiData;
 public class DataService {
 	private static Connection connection;
 
+	/**
+	 * Get the most recent IoT collected data.
+	 * 
+	 * @return The most recent data.
+	 */
 	public static PiData getData() {
 		PiData result = new PiData();
 		try {
@@ -40,7 +45,7 @@ public class DataService {
 			if (dbResult.next()) {
 				result.setId(dbResult.getInt("id"));
 				result.setTemperature(dbResult.getInt("temperature"));
-				result.setDate(dbResult.getDate("date"));
+				result.setDate(dbResult.getTimestamp("date"));
 			}
 		} catch (SQLException e) {
 

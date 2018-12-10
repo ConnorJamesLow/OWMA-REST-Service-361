@@ -1,33 +1,24 @@
-/**
- * Connor Low
- * CST-
- * Oct 18, 2018
- * This is my own work.
- */
 package api.models;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 
-/**
- * @author speed
- *
- */
 public class PiData {
 	int id;
 	int temperature;
-	Date date;
+	String date;
 
 	public PiData() {
 		super();
 		this.id = -1;
 		this.temperature = -1;
-		this.date = new Date(0L);
+		this.date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(new Timestamp(0L)).toString();
 	}
 
-	public PiData(int id, int temp, Date date) {
+	public PiData(int id, int temp, Timestamp date) {
 		this.id = id;
 		this.temperature = temp;
-		this.date = date;
+		this.date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(date).toString();
 	}
 
 	public int getId() {
@@ -38,26 +29,32 @@ public class PiData {
 		this.id = id;
 	}
 
+	/**
+	 * @return the temperature
+	 */
 	public int getTemperature() {
 		return temperature;
 	}
 
-	public void setTemperature(int temp) {
-		this.temperature = temp;
+	/**
+	 * @param temperature the temperature to set
+	 */
+	public void setTemperature(int temperature) {
+		this.temperature = temperature;
 	}
 
 	/**
 	 * @return the date
 	 */
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
 	/**
 	 * @param date the date to set
 	 */
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDate(Timestamp date) {
+		this.date = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ").format(date).toString();
 	}
 
 	/*
